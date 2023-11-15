@@ -1,4 +1,5 @@
 import express from "express";
+import * as lodash from "lodash"
 
 const app = express();
 
@@ -193,6 +194,29 @@ function add(a: number, b: number): number {
     return a + b;
 }
 console.log(add(1,2))
+
+
+// file d.ts (Declaration files)
+
+//được sử dụng trong TypeScript để cung cấp thông tin về cấu trúc của các module hay thư viện không phải TypeScript. 
+//Điều này giúp TypeScript hiểu được các thông tin về kiểu dữ liệu, hàm, class, và các phần khác của mã nguồn không phải TypeScript.
+//ex:  nếu sử dụng một thư viện js thì co theer tạo file d.ts để mô tả kiểu dữ liệu cho thư viện đó
+
+
+
+//Tìm hiểu về  global type
+
+// global type là kiểu dữ liệu có thể sử dụng mà không cần import nó. 
+// trong một số trường hợp nếu muốn sử dụng một kiểu dữ liệu được định nghĩa global mà không cần phải import từ một module cụ thể.
+
+// Sử dụng global type có thể gây ra các vấn đề xung đột tên và làm giảm tính module của mã nguồn TypeScript,
+
+
+// use lodash 
+const numbers2 = [1, 2, 3, 4, 5];
+
+const squaredNumbers: number[] = lodash.map(numbers2, (num: number) => num * num);
+console.log(squaredNumbers)
 
 
 app.listen(4000, () => {
